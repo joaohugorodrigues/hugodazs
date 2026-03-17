@@ -6,190 +6,65 @@
     <title>Hugo da ZS | Oficial</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* RESET BÁSICO */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Helvetica', 'Arial', sans-serif;
-        }
-
-        /* CORES PRINCIPAIS */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        
         :root {
             --azul-bebe: #A2D2FF;
-            --preto-puro: #000000;
+            --preto: #000000;
             --preto-card: #121212;
-            --texto-branco: #ffffff;
+            --branco: #ffffff;
         }
 
-        body {
-            background-color: var(--preto-puro);
-            color: var(--texto-branco);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+        body { background-color: var(--preto); color: var(--branco); line-height: 1.6; }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
-        /* HEADER / MENU */
+        /* MENU */
         header {
-            background-color: var(--preto-puro);
+            background-color: var(--preto);
             padding: 20px 0;
             border-bottom: 2px solid var(--azul-bebe);
-            position: fixed;
-            width: 100%;
+            position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
 
-        .logo {
-            color: var(--azul-bebe);
-            font-size: 1.4rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
+        .logo { color: var(--azul-bebe); font-size: 1.4rem; font-weight: bold; letter-spacing: 2px; }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 15px;
-            font-weight: bold;
-            font-size: 0.8rem;
-            transition: 0.3s;
-        }
+        nav a { color: white; text-decoration: none; margin-left: 15px; font-weight: bold; font-size: 0.8rem; }
 
-        nav a:hover {
-            color: var(--azul-bebe);
-        }
-
-        /* SEÇÃO PRINCIPAL (HERO) */
-        .hero {
-            height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* SEÇÃO PLAY (PLAYER DO SPOTIFY) */
+        .player-section {
+            padding: 60px 0;
             text-align: center;
-            padding-top: 80px;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.5), #000000);
+            background: linear-gradient(to bottom, #000, #121212);
         }
 
-        .hero h2 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            color: var(--texto-branco);
-        }
-
-        .social-icons a {
-            color: var(--azul-bebe);
-            font-size: 3rem;
-            margin: 0 15px;
-            transition: 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: white;
-            transform: scale(1.1);
+        .player-container {
+            margin-top: 20px;
+            box-shadow: 0px 0px 20px rgba(162, 210, 255, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* BIOGRAFIA */
-        .bio {
-            padding: 100px 0;
-            background-color: var(--preto-card);
-            text-align: center;
-        }
-
-        .bio h2 {
-            color: var(--azul-bebe);
-            margin-bottom: 30px;
-            font-size: 2rem;
-        }
-
-        .bio p {
-            max-width: 750px;
-            margin: 0 auto 20px auto;
-            font-size: 1.1rem;
-            color: #ccc;
-        }
-
-        /* EP SECTION */
-        .ep {
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .ep-card {
-            border: 2px solid var(--azul-bebe);
-            padding: 40px;
-            border-radius: 10px;
-            display: inline-block;
-            width: 100%;
-            max-width: 600px;
-        }
-
-        .ep-card h3 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: var(--azul-bebe);
-        }
-
-        .btn-link {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 15px 30px;
-            background-color: var(--azul-bebe);
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        .btn-link:hover {
-            background-color: white;
-        }
+        .bio { padding: 80px 0; background-color: var(--preto); text-align: center; }
+        .bio h2 { color: var(--azul-bebe); margin-bottom: 20px; }
+        .bio p { max-width: 750px; margin: 0 auto 15px; color: #ccc; }
 
         /* CONTATO */
-        footer {
-            padding: 80px 0;
-            text-align: center;
-            border-top: 1px solid #333;
-        }
+        footer { padding: 60px 0; text-align: center; border-top: 1px solid #333; }
+        .contact-wrap { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
+        .contact-item { color: white; text-decoration: none; font-size: 1.1rem; }
+        .contact-item i { color: var(--azul-bebe); margin-right: 8px; }
 
-        .contact-wrap {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .contact-item {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
-
-        .contact-item i {
-            color: var(--azul-bebe);
-            margin-right: 10px;
-            font-size: 1.5rem;
-        }
-
-        /* MOBILE */
         @media (max-width: 600px) {
-            .hero h2 { font-size: 2.5rem; }
             header .container { flex-direction: column; gap: 10px; }
-            nav a { margin: 0 10px; }
         }
     </style>
 </head>
@@ -199,50 +74,48 @@
         <div class="container">
             <div class="logo">HUGO DA ZS</div>
             <nav>
-                <a href="#bio">HISTÓRIA</a>
-                <a href="#ep">MÚSICA</a>
+                <a href="#bio">BIO</a>
+                <a href="#ouvir">OUVIR AGORA</a>
                 <a href="#contato">CONTATO</a>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
+    <section id="ouvir" class="player-section">
         <div class="container">
-            <p style="color: var(--azul-bebe); letter-spacing: 4px;">ZONA SUR SÃO PAULO</p>
-            <h2>HUGO DA ZS</h2>
-            <div class="social-icons">
-                <a href="https://open.spotify.com/intl-pt/artist/7ax646yXBurj41gNlgFcPg" target="_blank"><i class="fa-brands fa-spotify"></i></a>
-                <a href="https://www.youtube.com/@hugodazs" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <p style="color: var(--azul-bebe); letter-spacing: 3px; margin-bottom: 10px;">ESCUTE O NOVO EP</p>
+            <h2 style="font-size: 2.5rem; margin-bottom: 30px;">NASCIDO DO RAP</h2>
+            
+            <div class="player-container">
+                <iframe style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/artist/0?utm_source=generator&theme=0" 
+                    width="100%" height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+                </iframe>
             </div>
         </div>
     </section>
 
     <section id="bio" class="bio">
         <div class="container">
-            <h2>BIOGRAFIA</h2>
-            <p>Hugo da ZS iniciou na música aos 17 anos. Nascido no Capão Redondo, Zona Sul de São Paulo, ele traz a vivência real em suas letras. Pai, marido e trabalhador, Hugo hoje tem 30 anos e uma carreira marcada pela resiliência.</p>
-            <p>Seu primeiro grupo foi a banda <strong>Novo Ar</strong>, que durou 1 ano e foi o pontapé inicial para sua identidade no Rap. Hoje, em carreira solo, apresenta o EP "Nascido do Rap".</p>
-        </div>
-    </section>
-
-    <section id="ep" class="ep">
-        <div class="container">
-            <div class="ep-card">
-                <h3>EP: Nascido do Rap</h3>
-                <p>O primeiro trabalho solo com 4 faixas pesadas.</p>
-                <a href="https://open.spotify.com/intl-pt/artist/7ax646yXBurj41gNlgFcPg" target="_blank" class="btn-link">OUVIR AGORA NO SPOTIFY</a>
-            </div>
+            <h2>A HISTÓRIA</h2>
+            <p>Hugo da ZS começou aos 17 anos na música. Nascido no Capão Redondo, Zona Sul de São Paulo, ele traz a vivência real em suas letras. Pai, marido e trabalhador, Hugo hoje tem 30 anos.</p>
+            <p>Seu primeiro grupo foi a banda <strong>Novo Ar</strong>. Hoje, em carreira solo, foca na essência do Rap nacional.</p>
         </div>
     </section>
 
     <footer id="contato">
         <div class="container">
-            <h2 style="color: var(--azul-bebe)">CONTATO</h2>
+            <h2 style="color: var(--azul-bebe)">FALE COMIGO</h2>
             <div class="contact-wrap">
                 <a href="https://wa.me/5511986566850" class="contact-item"><i class="fa-brands fa-whatsapp"></i> 11 98656-6850</a>
                 <a href="mailto:jhugo085@gmail.com" class="contact-item"><i class="fa-regular fa-envelope"></i> jhugo085@gmail.com</a>
+                <a href="https://www.youtube.com/@hugodazs" target="_blank" class="contact-item"><i class="fa-brands fa-youtube"></i> YouTube</a>
             </div>
-            <p style="margin-top: 50px; color: #555; font-size: 0.8rem;">© 2026 Hugo da ZS | Capão Redondo, SP.</p>
+            <p style="margin-top: 40px; color: #555; font-size: 0.8rem;">© 2026 Hugo da ZS | Capão Redondo, SP.</p>
         </div>
     </footer>
 
